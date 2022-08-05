@@ -1,4 +1,5 @@
 import Form from '../Components/Form'
+import { connect } from 'react-redux';
 
 function Signin() {
     return (
@@ -7,4 +8,7 @@ function Signin() {
         </main>
     )
   }
+
+  connect()(Form)
+
   export default Signin
