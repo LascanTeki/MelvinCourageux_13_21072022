@@ -3,15 +3,12 @@ import '../Style/Header.css'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from '../Redux';
-import { useNavigate } from "react-router-dom";
 
 
 function Header() {
 
     const dispatch = useDispatch();
     const state = useSelector(state => state.control)
-    console.log(state);
-    const history = useNavigate();
 
     function handleLogout(){
         dispatch(logout())

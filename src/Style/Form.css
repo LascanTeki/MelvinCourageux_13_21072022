@@ -4,7 +4,7 @@
 }
 
 .main {
-  flex:1
+  flex: 1
 }
 
 .input-remember {
@@ -31,6 +31,11 @@
   font-size: 1.2rem;
 }
 
+input[type="submit" i] {
+border : none;
+box-sizing:inherit
+}
+
 .sign-in-button {
   display: block;
   width: 100%;
@@ -41,6 +46,8 @@
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .sign-in-content {

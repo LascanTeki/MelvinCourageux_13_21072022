@@ -80,8 +80,7 @@ function Form() {
                 <div className="input-remember">
                     <input type="checkbox" id="remember-me" /><label htmlFor="remember-me">Remember me</label>
                 </div>
-                <Link className="sign-in-button" to="/User">Sign In</Link>
-                <input type="submit" value="Sign In" />
+                <input className="sign-in-button" type="submit" value="Sign In" />
             </form>
         </section>
     )

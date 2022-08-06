@@ -21,18 +21,11 @@ const UserControl = createSlice({
 
         },
 
-        set: (state, action) => {
-
-            state.user = action
-
-        },
-
         edit: (state, action) => {
 
         },
 
         logout: (state) => {
-            console.log("action");
             state.logged = false;
             state.firstname = ""
             state.lastname = ""
@@ -41,7 +34,7 @@ const UserControl = createSlice({
     }
 })
 
-export const { login, set, edit, logout } = UserControl.actions
+export const { login, edit, logout } = UserControl.actions
 
 
 
