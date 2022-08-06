@@ -34,8 +34,8 @@ const UserControl = createSlice({
         logout: (state) => {
             console.log("action");
             state.logged = false;
-            state.user = ""
-            state.token = ""
+            state.firstname = ""
+            state.lastname = ""
         }
 
     }

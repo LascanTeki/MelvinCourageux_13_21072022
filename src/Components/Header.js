@@ -10,6 +10,7 @@ function Header() {
 
     const dispatch = useDispatch();
     const state = useSelector(state => state.control)
+    console.log(state);
     const history = useNavigate();
 
     function handleLogout(){
@@ -26,11 +27,11 @@ function Header() {
                 </Link>
                 <div>
                     <div>
-                        <Link className="main-nav-item" to="/User" onClick={handleLogout}>
+                        <Link className="main-nav-item" to="/User" >
                             <i className="fa fa-user-circle" ></i>
                             {state.firstname}
                         </Link>
-                        <Link className="main-nav-item" to="/">
+                        <Link className="main-nav-item" to="/" onClick={handleLogout}>
                             <i className="fa fa-sign-out"></i>
                             {" Sign Out"}
                         </Link>
