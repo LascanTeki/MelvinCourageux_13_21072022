@@ -7,22 +7,24 @@ const UserControl = createSlice({
 
         logged: false,
         firstname: "",
-        lastname : ""
+        lastname : "",
+        token : ""
 
     },
 
     reducers: {
 
         login: (state, action) => {
-            
             state.logged = true;
-            state.firstname = action.payload.body.firstName
-            state.lastname = action.payload.body.lastName
+            state.firstname = action.payload.response.body.firstName
+            state.lastname = action.payload.response.body.lastName
+            state.token = action.payload.token
 
         },
 
-        edit: (state, action) => {
-
+        editing: (state, action) => {
+            state.firstname = action.payload.firstname
+            state.lastname = action.payload.lastname
         },
 
         logout: (state) => {
@@ -34,7 +36,7 @@ const UserControl = createSlice({
     }
 })
 
-export const { login, edit, logout } = UserControl.actions
+export const { login, editing, logout } = UserControl.actions
 
 
 

@@ -37,15 +37,15 @@ function Form() {
         }).then(response => response.json())
             .then((response) => {
                 if (response.status === 200) {
+                    var token = response.body.token
                     fetch("http://localhost:3001/api/v1/user/profile", {
                         body: "",
-                        headers: { Accept: "application/json", "Authorization": `Bearer ${response.body.token}` },
+                        headers: { Accept: "application/json", "Authorization": `Bearer ${token}` },
                         method: "POST"
                     }).then(response => response.json())
                         .then((response) => {
                             if (response.status === 200) {
-
-                                dispatch(login(response))
+                                dispatch(login({response, token}))
                                 history('/User')
                             }
                             else{

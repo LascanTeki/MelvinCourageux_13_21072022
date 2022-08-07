@@ -47,7 +47,23 @@
     color: #fff;
     margin-bottom: 2rem;
   }
+
+  .edit{
+    display: none;
+    margin: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
   
+  .edit .input-wrapper{
+    width: 40%;
+    color: #5f7c99;
+  }
+
+  .edit .sign-in-button{
+    width: 20%;
+  }
+
   .transaction-button {
     display: block;
     width: 100%;
