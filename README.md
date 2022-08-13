@@ -7,6 +7,7 @@
 - JS
 - CSS 
 - React
+- Redux
 
 ## Authors
 
