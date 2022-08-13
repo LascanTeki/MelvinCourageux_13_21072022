@@ -1,11 +1,8 @@
 
 import '../Style/Form.css'
-import { Link } from 'react-router-dom'
 import { login } from '../Redux';
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
-
 
 
 function Form() {
@@ -17,16 +14,15 @@ function Form() {
     const dispatch = useDispatch();
     const history = useNavigate();
 
-    
-
 
     const HandleLogin = (e) => {
         e.preventDefault();
 
+        //takes values from form
         username = document.getElementById('username').value;
         password = document.getElementById('password').value;
 
-
+        //sends the inputed username and password to the API and takes it's response
         fetch("http://localhost:3001/api/v1/user/login", {
             body: `{ "email": "${username}" , "password": "${password}"}`,
             headers: {
@@ -36,6 +32,7 @@ function Form() {
             method: "POST"
         }).then(response => response.json())
             .then((response) => {
+                //if the API says that de login is correct send authorization token to the API to reccuperate user informations
                 if (response.status === 200) {
                     var token = response.body.token
                     fetch("http://localhost:3001/api/v1/user/profile", {
@@ -48,6 +45,7 @@ function Form() {
                                 dispatch(login({response, token}))
                                 history('/User')
                             }
+                            //else, alerts the user of the error occuring
                             else{
                                 alert("An error happened in our server, please try again later");
                             }

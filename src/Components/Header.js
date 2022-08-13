@@ -14,6 +14,7 @@ function Header() {
         dispatch(logout())
     }
 
+    //if a username is entered in redux (after login) displays the loged in header with a name and a logout button
     if (state.firstname !== "") {
 
         return (
@@ -40,6 +41,7 @@ function Header() {
         )
     }
 
+    //else, displays an header with a login button
     else {
 
         return (

@@ -7,7 +7,9 @@ import { editing } from '../Redux';
 
 function User() {
 
+    //makes the user change page
     const history = useNavigate();
+
     const dispatch = useDispatch();
 
     const state = useSelector(state => state.control)
@@ -15,6 +17,7 @@ function User() {
     var firstname
     var lastname
 
+    //checks if the user is loged in and redirects them if they're not
     useEffect(() => {
         if (state.token === "") {
             history('/')
@@ -26,9 +29,11 @@ function User() {
 
         e.preventDefault();
 
+        //takes the values inserted into the form
         firstname = document.getElementById('firstname').value;
         lastname = document.getElementById('lastname').value;
 
+        //sends user inputed new name to the API as well as the token taken during login
         fetch("http://localhost:3001/api/v1/user/profile", {
             body: `{ "firstName": "${firstname}" , "lastName": "${lastname}"}`,
             headers: {
@@ -38,15 +43,18 @@ function User() {
             },
             method: "PUT"
         }).then(() => {
+            //changes the values of firstname and lastname in redux
             dispatch(editing({ firstname, lastname }))
         });
 
+        //reverts back to the classic message "Welcome back" on the page
         document.getElementsByClassName("header")[0].style.display = "block";
         document.getElementsByClassName("edit")[0].style.display = "none";
     }
 
     function edit() {
 
+        //shows the form to change the username
         document.getElementsByClassName("header")[0].style.display = "none";
         document.getElementsByClassName("edit")[0].style.display = "flex";
     }
@@ -67,7 +75,7 @@ function User() {
                         <label htmlFor="lastname">Last name</label>
                         <input type="text" id="lastname" />
                     </div>
-                    <input className="sign-in-button" type="submit" value="Sumbit" />
+                    <input className="sign-in-button" type="submit" value="Submit" />
                 </div>
             </form>
             <Account titl="Checking (x8349)" amount="2,082.79" description="Available Balance" />

@@ -3,6 +3,7 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 const UserControl = createSlice({
     name: "control",
 
+    //initial, blank, states
     initialState: {
 
         logged: false,
@@ -12,6 +13,7 @@ const UserControl = createSlice({
 
     },
 
+    //reducers, changing the states
     reducers: {
 
         login: (state, action) => {
@@ -38,8 +40,7 @@ const UserControl = createSlice({
 
 export const { login, editing, logout } = UserControl.actions
 
-
-
+//store, distributing to react
 export const store = configureStore({
     reducer: {
 
