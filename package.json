@@ -1,6 +1,7 @@
 {
   "name": "projet-13",
   "version": "0.1.0",
+  "homepage": "https://lascanteki.github.io/MelvinCourageux_13_21072022",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
@@ -19,6 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

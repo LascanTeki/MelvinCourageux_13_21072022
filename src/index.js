@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import  { store }  from "./Redux";
 
 ReactDOM.render(
-  <Provider store={store}> <BrowserRouter><App/></BrowserRouter> </Provider>,
+  <Provider store={store}> <BrowserRouter basename="/MelvinCourageux_13_21072022"><App/></BrowserRouter> </Provider>,
   document.getElementById("root"))
 
 
